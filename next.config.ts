@@ -1,7 +1,21 @@
 import type { NextConfig } from "next";
 
+const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
+const githubPagesBasePath =
+  process.env.GITHUB_PAGES_BASE_PATH ?? "/driveex-rental";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGitHubPagesBuild ? githubPagesBasePath : "",
+  },
+  ...(isGitHubPagesBuild
+    ? {
+        output: "export" as const,
+        basePath: githubPagesBasePath,
+        trailingSlash: true,
+        images: { unoptimized: true },
+      }
+    : {}),
 };
 
 export default nextConfig;

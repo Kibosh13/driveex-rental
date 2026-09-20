@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { InlineLeadForm, ProductCard, RequestDialog, SiteFooter, SiteHeader } from "@/components/site-shell";
 import { equipment } from "@/lib/site-data";
+import { assetPath } from "@/lib/asset-path";
 
 const categories = [
   { name: "Экскаваторы", meta: "Гусеничные и колёсные", price: "от 14 000 ₽/смена", image: "/hero-excavator.jpg" },
@@ -38,7 +39,7 @@ export default function Home() {
 
       <section className="relative min-h-[650px] bg-ink text-white">
         <div className="absolute inset-0">
-          <img src="/hero-excavator.jpg" alt="Экскаватор на строительном объекте" className="h-full w-full object-cover object-center" />
+          <img src={assetPath("/hero-excavator.jpg")} alt="Экскаватор на строительном объекте" className="h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,18,20,.96)_0%,rgba(16,18,20,.84)_44%,rgba(16,18,20,.24)_78%,rgba(16,18,20,.1)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
@@ -75,7 +76,7 @@ export default function Home() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {categories.map((category) => (
               <Link href="/catalog" key={category.name} className="group border border-black/12 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#171717]">
-                <div className="relative h-48 overflow-hidden bg-zinc-100"><img src={category.image} alt={category.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span></div>
+                <div className="relative h-48 overflow-hidden bg-zinc-100"><img src={assetPath(category.image)} alt={category.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span></div>
                 <div className="p-5"><h3 className="min-h-14 text-xl font-black leading-tight tracking-[-0.03em]">{category.name}</h3><p className="mt-2 text-sm text-muted-foreground">{category.meta}</p><p className="mt-5 text-lg font-black text-orange-600">{category.price}</p><span className="mt-5 flex items-center justify-between border-t border-black/10 pt-4 text-sm font-black">Смотреть технику <ArrowRight className="h-4 w-4" /></span></div>
               </Link>
             ))}
@@ -110,7 +111,7 @@ export default function Home() {
 
       <section className="bg-[#f3f4f3] py-20">
         <div className="shell grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[500px] overflow-hidden"><img src="/excavator-work.jpg" alt="Работа спецтехники на городском объекте" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute bottom-0 left-0 max-w-sm bg-brand p-6 text-ink"><b className="text-4xl font-black">2 400+</b><p className="mt-1 font-bold">заказов выполнено за прошлый год</p></div></div>
+          <div className="relative min-h-[500px] overflow-hidden"><img src={assetPath("/excavator-work.jpg")} alt="Работа спецтехники на городском объекте" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute bottom-0 left-0 max-w-sm bg-brand p-6 text-ink"><b className="text-4xl font-black">2 400+</b><p className="mt-1 font-bold">заказов выполнено за прошлый год</p></div></div>
           <div><p className="eyebrow">Надёжный подрядчик</p><h2 className="section-title">Берём объект под контроль</h2><p className="mt-6 text-lg leading-8 text-muted-foreground">Работаем с подрядчиками, девелоперами, промышленными предприятиями и частными заказчиками. Если задача требует несколько видов техники, организуем комплексную подачу и единый документооборот.</p><ul className="mt-8 grid gap-4 text-base font-bold"><li className="flex gap-3"><ShieldCheck className="h-6 w-6 text-orange-600" />Техника проходит осмотр перед каждой сменой</li><li className="flex gap-3"><Route className="h-6 w-6 text-orange-600" />Логистику согласуем до подтверждения заявки</li><li className="flex gap-3"><Check className="h-6 w-6 text-orange-600" />Цена фиксируется в договоре</li></ul><Button asChild className="mt-9 h-13 rounded-none bg-ink px-7 text-base font-black text-white hover:bg-brand hover:text-ink"><Link href="/about">Подробнее о компании <ArrowRight /></Link></Button></div>
         </div>
       </section>

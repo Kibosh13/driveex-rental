@@ -31,6 +31,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import type { Equipment } from "@/lib/site-data";
+import { assetPath } from "@/lib/asset-path";
 
 const navigation = [
   ["Каталог", "/catalog"],
@@ -44,7 +45,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
   return (
     <Link href="/" className="flex shrink-0 items-center" aria-label="DriveEX — главная">
       <img
-        src="/driveex-logo-cropped.png"
+        src={assetPath("/driveex-logo-cropped.png")}
         alt="DriveEX"
         className={`h-auto w-[158px] object-contain sm:w-[196px] ${inverted ? "drop-shadow-[0_3px_10px_rgba(0,0,0,.28)]" : ""}`}
       />
@@ -148,7 +149,7 @@ export function ProductCard({ item }: { item: Equipment }) {
   return (
     <article className="group flex h-full flex-col border border-black/12 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#171717]">
       <Link href={`/catalog/${item.slug}`} className="relative block h-56 overflow-hidden bg-zinc-100">
-        <img src={item.image} alt={item.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <img src={assetPath(item.image)} alt={item.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         <span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span>
       </Link>
       <div className="flex flex-1 flex-col p-5">

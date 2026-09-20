@@ -4,6 +4,7 @@ import { ArrowLeft, Check, FileText, Fuel, ShieldCheck, Truck } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { ProductCard, RequestDialog, SiteFooter, SiteHeader } from "@/components/site-shell";
 import { equipment } from "@/lib/site-data";
+import { assetPath } from "@/lib/asset-path";
 
 export function generateStaticParams() {
   return equipment.map((item) => ({ slug: item.slug }));
@@ -22,7 +23,7 @@ export default async function EquipmentPage({ params }: { params: Promise<{ slug
         <div className="shell">
           <Link href="/catalog" className="inline-flex items-center gap-2 text-sm font-black text-muted-foreground hover:text-ink"><ArrowLeft className="h-4 w-4" /> Назад в каталог</Link>
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_.85fr]">
-            <div className="relative min-h-[420px] overflow-hidden bg-zinc-100 md:min-h-[570px]"><img src={item.image} alt={item.name} className="absolute inset-0 h-full w-full object-cover" /><span className="absolute left-5 top-5 bg-brand px-4 py-2 text-xs font-black uppercase">В наличии</span></div>
+            <div className="relative min-h-[420px] overflow-hidden bg-zinc-100 md:min-h-[570px]"><img src={assetPath(item.image)} alt={item.name} className="absolute inset-0 h-full w-full object-cover" /><span className="absolute left-5 top-5 bg-brand px-4 py-2 text-xs font-black uppercase">В наличии</span></div>
             <div>
               <p className="eyebrow">{item.categoryLabel}</p>
               <h1 className="mt-3 text-[clamp(2.4rem,5vw,4.7rem)] font-black leading-[.94] tracking-[-.055em]">{item.name}</h1>

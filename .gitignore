@@ -21,6 +21,15 @@
 # misc
 .DS_Store
 *.pem
+*.key
+*.log
+*.sqlite*
+*.db
+*.db-*
+*.tsbuildinfo
+/.cache/
+/.turbo/
+/.vite/
 
 # debug
 npm-debug.log*
