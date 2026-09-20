@@ -1,3 +1,3 @@
-:HL["/driveex-rental/_next/static/chunks/34xcd_ubkndlh.css","style"]
+:HL["/driveex-rental/_next/static/chunks/03tqiwo4qgajm.css","style"]
 :HL["/driveex-rental/excavator-work.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"catalog","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"hyundai-hl740","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"H-osF3lQTYdewzRotnUHO"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"catalog","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"hyundai-hl740","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"lBo_CmcnQ3435Ff1_ZXeg"}
