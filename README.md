@@ -28,3 +28,7 @@ npm run build:pages
 Результат создаётся в `out/`. Индексация демонстрации закрыта метатегами `noindex, nofollow` и файлом `robots.txt`.
 
 В статической версии доступны все страницы, каталог, карточки техники, адаптивная навигация и клиентские фильтры. Формы показывают демонстрационный сценарий и не передают данные на сервер. Серверная авторизация, D1/R2 и другие runtime-возможности Vinext в GitHub Pages не используются.
+
+## Медиа
+
+Видео в первом экране: [Suraphat Nuea-on / Pexels](https://www.pexels.com/video/excavator-working-on-construction-site-11839348/), используется по [лицензии Pexels](https://www.pexels.com/license/).

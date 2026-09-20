@@ -40,6 +40,18 @@ export default function Home() {
       <section className="relative min-h-[650px] bg-ink text-white">
         <div className="absolute inset-0">
           <img src={assetPath("/hero-excavator.jpg")} alt="Экскаватор на строительном объекте" className="h-full w-full object-cover object-center" />
+          <video
+            className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={assetPath("/hero-excavator.jpg")}
+            aria-hidden="true"
+          >
+            <source src={assetPath("/hero-equipment.mp4")} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,18,20,.96)_0%,rgba(16,18,20,.84)_44%,rgba(16,18,20,.24)_78%,rgba(16,18,20,.1)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
