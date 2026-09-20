@@ -57,7 +57,7 @@ function LeadForm({ equipmentName }: { equipmentName?: string }) {
   const [sent, setSent] = useState(false);
   if (sent) {
     return (
-      <div className="grid min-h-64 place-items-center border-2 border-brand bg-[#fff9df] p-7 text-center">
+      <div className="grid min-h-64 place-items-center border-2 border-brand bg-[#eef5fb] p-7 text-center">
         <div>
           <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand"><Check className="h-7 w-7" /></span>
           <h3 className="mt-5 text-2xl font-black tracking-[-0.04em]">Заявка принята</h3>
@@ -87,7 +87,7 @@ export function RequestDialog({ children, equipmentName }: { children: React.Rea
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-md border-2 border-ink bg-white p-7 shadow-[10px_10px_0_#f5b800]">
+      <DialogContent className="max-w-md border-2 border-brand-blue bg-white p-7 shadow-[10px_10px_0_#f36b21]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-black tracking-[-0.04em]">Рассчитать аренду</DialogTitle>
           <DialogDescription className="text-base leading-6">Оставьте контакты и задачу. Менеджер уточнит детали и предложит технику.</DialogDescription>
@@ -110,7 +110,7 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-      <header className="relative z-40 border-b border-black/10 bg-white">
+      <header className="relative z-40 border-b border-silver-dark/60 bg-white">
         <div className="shell flex h-[86px] items-center gap-8">
           <Logo />
           <nav className="ml-auto hidden items-center gap-7 text-[15px] font-bold lg:flex" aria-label="Основная навигация">
@@ -124,13 +124,13 @@ export function SiteHeader() {
               <Button variant="outline" size="icon-lg" className="ml-auto rounded-none border-2 lg:hidden" aria-label="Открыть меню"><Menu /></Button>
             </SheetTrigger>
             <SheetContent className="border-l-2 border-ink bg-white p-0">
-              <SheetHeader className="border-b border-black/10 p-6 text-left">
+              <SheetHeader className="border-b border-silver-dark/60 p-6 text-left">
                 <SheetTitle><Logo /></SheetTitle>
                 <SheetDescription>Аренда спецтехники по Москве и области</SheetDescription>
               </SheetHeader>
               <nav className="grid px-6 py-4 text-xl font-black">
                 {navigation.map(([label, href]) => (
-                  <SheetClose key={href} asChild><Link className="flex items-center justify-between border-b border-black/10 py-4" href={href}>{label}<ChevronRight /></Link></SheetClose>
+                  <SheetClose key={href} asChild><Link className="flex items-center justify-between border-b border-silver-dark/60 py-4" href={href}>{label}<ChevronRight /></Link></SheetClose>
                 ))}
               </nav>
               <div className="mt-auto p-6">
@@ -147,19 +147,19 @@ export function SiteHeader() {
 
 export function ProductCard({ item }: { item: Equipment }) {
   return (
-    <article className="group flex h-full flex-col border border-black/12 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#171717]">
+    <article className="group flex h-full flex-col border border-silver-dark/60 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#0b4f93]">
       <Link href={`/catalog/${item.slug}`} className="relative block h-56 overflow-hidden bg-zinc-100">
         <img src={assetPath(item.image)} alt={item.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         <span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span>
       </Link>
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-black uppercase tracking-[.1em] text-orange-600">{item.categoryLabel}</p>
+        <p className="text-xs font-black uppercase tracking-[.1em] text-brand">{item.categoryLabel}</p>
         <h3 className="mt-2 min-h-14 text-xl font-black leading-tight tracking-[-0.03em]"><Link href={`/catalog/${item.slug}`}>{item.name}</Link></h3>
         <dl className="mt-4 grid gap-2 text-sm text-muted-foreground">
           {item.specs.slice(0, 2).map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt>{label}</dt><dd className="font-bold text-ink">{value}</dd></div>)}
         </dl>
         <div className="mt-auto pt-5">
-          <p className="text-sm text-muted-foreground">от <b className="text-2xl font-black text-orange-600">{item.hourPrice.toLocaleString("ru-RU")}</b> ₽/час</p>
+          <p className="text-sm text-muted-foreground">от <b className="text-2xl font-black text-brand">{item.hourPrice.toLocaleString("ru-RU")}</b> ₽/час</p>
           <p className="mt-1 text-xs text-muted-foreground">{item.minimum}</p>
           <div className="mt-5 grid grid-cols-2 gap-2">
             <Button asChild variant="outline" className="rounded-none border-2 font-bold"><Link href={`/catalog/${item.slug}`}>Подробнее</Link></Button>
@@ -173,9 +173,9 @@ export function ProductCard({ item }: { item: Equipment }) {
 
 export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-white md:py-24">
+    <section className="relative overflow-hidden bg-[linear-gradient(115deg,#071f38_0%,#0a3767_58%,#0b4f93_100%)] py-20 text-white md:py-24">
       <div className="absolute -right-12 top-0 h-full w-1/3 skew-x-[-12deg] bg-brand/90" />
-      <div className="absolute -right-4 top-0 h-full w-1/4 skew-x-[-12deg] bg-white/10" />
+      <div className="absolute -right-4 top-0 h-full w-1/4 skew-x-[-12deg] bg-silver/20" />
       <div className="shell relative">
         <p className="text-sm font-black uppercase tracking-[.14em] text-brand">{eyebrow}</p>
         <h1 className="mt-4 max-w-4xl text-[clamp(2.8rem,6vw,5.5rem)] font-black uppercase leading-[.9] tracking-[-.06em]">{title}</h1>

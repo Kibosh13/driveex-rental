@@ -20,7 +20,7 @@ export default function CatalogPage() {
       <PageHero eyebrow="Каталог" title="Спецтехника в аренду" text="Сравните характеристики и стоимость. Если не уверены в выборе, опишите задачу — мы подберём машину под условия объекта." />
       <section className="bg-white py-16">
         <div className="shell">
-          <div className="grid gap-4 border-b border-black/10 pb-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="grid gap-4 border-b border-silver-dark/60 pb-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <label className="flex h-13 items-center gap-3 border-2 border-ink bg-white px-4 lg:max-w-xl">
               <Search className="h-5 w-5 text-muted-foreground" />
               <input value={query} onChange={(event) => setQuery(event.target.value)} className="min-w-0 flex-1 outline-none" placeholder="Найти технику по названию" aria-label="Поиск по каталогу" />

@@ -3,27 +3,31 @@
 @import "../vendor/shadcn-tailwind-4.13.0.css";
 
 :root {
-  --background: #f7f7f5;
-  --foreground: #17191b;
+  --background: #eef2f6;
+  --foreground: #102840;
   --card: #ffffff;
-  --card-foreground: #17191b;
+  --card-foreground: #102840;
   --popover: #ffffff;
-  --popover-foreground: #17191b;
-  --primary: #17191b;
+  --popover-foreground: #102840;
+  --primary: #0b4f93;
   --primary-foreground: #ffffff;
-  --secondary: #ededeb;
-  --secondary-foreground: #17191b;
-  --muted: #eceeec;
-  --muted-foreground: #666b70;
-  --accent: #f5b800;
-  --accent-foreground: #17191b;
+  --secondary: #dce3ea;
+  --secondary-foreground: #102840;
+  --muted: #e5eaf0;
+  --muted-foreground: #667587;
+  --accent: #f36b21;
+  --accent-foreground: #102840;
   --destructive: #c22920;
-  --border: #d8d9d6;
-  --input: #cfd1ce;
-  --ring: #f5b800;
-  --brand: #f5b800;
-  --brand-dark: #dda600;
-  --ink: #17191b;
+  --border: #c5ced8;
+  --input: #aeb9c5;
+  --ring: #1a73c8;
+  --brand: #f36b21;
+  --brand-dark: #d94f12;
+  --brand-blue: #0b4f93;
+  --brand-blue-dark: #082f5b;
+  --silver: #e8edf2;
+  --silver-dark: #aeb9c5;
+  --ink: #0a2745;
   --radius: 0.25rem;
 }
 
@@ -48,6 +52,10 @@
   --color-ring: var(--ring);
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-silver: var(--silver);
+  --color-silver-dark: var(--silver-dark);
   --color-ink: var(--ink);
   --radius-sm: 0.125rem;
   --radius-md: 0.25rem;
@@ -66,12 +74,12 @@ button, a, input, textarea { font: inherit; }
 .nav-link::after { content: ""; position: absolute; inset: auto 0 0; height: 2px; background: var(--brand); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
 .nav-link:hover::after { transform: scaleX(1); }
 .tag { display: inline-flex; background: var(--brand); color: var(--ink); padding: .55rem .8rem; font-size: .78rem; line-height: 1; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
-.field { width: 100%; min-height: 48px; border: 1px solid #cfd1ce; border-radius: 0; background: #fff; padding: 12px 14px; color: var(--ink); outline: none; transition: box-shadow .2s, border-color .2s; }
-.field:focus { border-color: var(--ink); box-shadow: 4px 4px 0 var(--brand); }
-.eyebrow { color: #c45d00; font-size: .8rem; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
+.field { width: 100%; min-height: 48px; border: 1px solid var(--silver-dark); border-radius: 0; background: #fff; padding: 12px 14px; color: var(--ink); outline: none; transition: box-shadow .2s, border-color .2s; }
+.field:focus { border-color: var(--brand-blue); box-shadow: 4px 4px 0 var(--brand); }
+.eyebrow { color: var(--brand); font-size: .8rem; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
 .section-title { margin-top: .55rem; font-size: clamp(2.1rem, 4vw, 3.5rem); line-height: .98; font-weight: 900; letter-spacing: -.055em; }
-.task-chip { min-height: 42px; border: 1px solid #d3d5d2; background: #fff; padding: .65rem 1rem; font-size: .9rem; font-weight: 800; transition: background .2s, border-color .2s; }
-.task-chip:hover, .task-chip-active { border-color: var(--ink); background: var(--ink); color: #fff; }
+.task-chip { min-height: 42px; border: 1px solid var(--silver-dark); background: #fff; padding: .65rem 1rem; font-size: .9rem; font-weight: 800; transition: background .2s, border-color .2s, color .2s; }
+.task-chip:hover, .task-chip-active { border-color: var(--brand-blue); background: var(--brand-blue); color: #fff; }
 
 @media (max-width: 640px) {
   .shell { width: min(100% - 28px, 1220px); }

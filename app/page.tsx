@@ -52,8 +52,8 @@ export default function Home() {
           >
             <source src={assetPath("/hero-equipment.mp4")} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,18,20,.96)_0%,rgba(16,18,20,.84)_44%,rgba(16,18,20,.24)_78%,rgba(16,18,20,.1)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,27,51,.97)_0%,rgba(7,46,86,.88)_44%,rgba(8,47,88,.38)_78%,rgba(8,47,88,.16)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#061d35]/75 to-transparent" />
         </div>
         <div className="shell relative grid min-h-[650px] items-center gap-12 py-16 lg:grid-cols-[1.3fr_.7fr]">
           <div className="max-w-3xl">
@@ -66,11 +66,11 @@ export default function Home() {
             </div>
             <div className="mt-12 grid max-w-2xl grid-cols-1 gap-px bg-white/15 sm:grid-cols-3">
               {[["200+", "единиц техники"], ["10 лет", "работаем на объектах"], ["4,9", "рейтинг клиентов"]].map(([value, label]) => (
-                <div key={label} className="bg-black/30 px-5 py-4 backdrop-blur-sm"><b className="text-2xl font-black text-brand">{value}</b><span className="mt-1 block text-sm text-white/65">{label}</span></div>
+                <div key={label} className="bg-[#082f5b]/55 px-5 py-4 backdrop-blur-sm"><b className="text-2xl font-black text-brand">{value}</b><span className="mt-1 block text-sm text-white/70">{label}</span></div>
               ))}
             </div>
           </div>
-          <aside className="hidden border-l-4 border-brand bg-white p-7 text-ink shadow-[14px_14px_0_rgba(245,184,0,.92)] lg:block">
+          <aside className="hidden border-l-4 border-brand bg-white p-7 text-ink shadow-[14px_14px_0_rgba(11,79,147,.92)] lg:block">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-muted-foreground">Быстрый расчёт</p>
             <h2 className="mt-2 text-3xl font-black leading-tight tracking-[-0.04em]">Что нужно сделать на объекте?</h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">Опишите задачу — подберём машину и подготовим предварительную стоимость.</p>
@@ -87,20 +87,20 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {categories.map((category) => (
-              <Link href="/catalog" key={category.name} className="group border border-black/12 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#171717]">
+              <Link href="/catalog" key={category.name} className="group border border-silver-dark/60 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#0b4f93]">
                 <div className="relative h-48 overflow-hidden bg-zinc-100"><img src={assetPath(category.image)} alt={category.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span></div>
-                <div className="p-5"><h3 className="min-h-14 text-xl font-black leading-tight tracking-[-0.03em]">{category.name}</h3><p className="mt-2 text-sm text-muted-foreground">{category.meta}</p><p className="mt-5 text-lg font-black text-orange-600">{category.price}</p><span className="mt-5 flex items-center justify-between border-t border-black/10 pt-4 text-sm font-black">Смотреть технику <ArrowRight className="h-4 w-4" /></span></div>
+                <div className="p-5"><h3 className="min-h-14 text-xl font-black leading-tight tracking-[-0.03em]">{category.name}</h3><p className="mt-2 text-sm text-muted-foreground">{category.meta}</p><p className="mt-5 text-lg font-black text-brand">{category.price}</p><span className="mt-5 flex items-center justify-between border-t border-silver-dark/50 pt-4 text-sm font-black">Смотреть технику <ArrowRight className="h-4 w-4" /></span></div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-y border-black/10 bg-[#f3f4f3] py-16">
+      <section className="border-y border-silver-dark/50 bg-silver py-16">
         <div className="shell grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
           {[[Truck, "Доставка точно в срок", "Согласуем маршрут и время подачи"], [HardHat, "Опытные операторы", "Стаж машинистов от 5 лет"], [Wrench, "Исправная техника", "Собственная ремонтная база"], [Check, "Всё включено", "Оператор, топливо и документы"]].map(([Icon, title, text]) => {
             const FeatureIcon = Icon as typeof Building2;
-            return <div key={title as string} className="flex gap-4 border-l-2 border-brand pl-5"><FeatureIcon className="mt-1 h-7 w-7 shrink-0 text-orange-600" /><div><h3 className="font-black">{title as string}</h3><p className="mt-1 text-sm leading-5 text-muted-foreground">{text as string}</p></div></div>;
+            return <div key={title as string} className="flex gap-4 border-l-2 border-brand pl-5"><FeatureIcon className="mt-1 h-7 w-7 shrink-0 text-brand-blue" /><div><h3 className="font-black">{title as string}</h3><p className="mt-1 text-sm leading-5 text-muted-foreground">{text as string}</p></div></div>;
           })}
         </div>
       </section>
@@ -121,10 +121,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f3f4f3] py-20">
+      <section className="bg-silver py-20">
         <div className="shell grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative min-h-[500px] overflow-hidden"><img src={assetPath("/excavator-work.jpg")} alt="Работа спецтехники на городском объекте" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute bottom-0 left-0 max-w-sm bg-brand p-6 text-ink"><b className="text-4xl font-black">2 400+</b><p className="mt-1 font-bold">заказов выполнено за прошлый год</p></div></div>
-          <div><p className="eyebrow">Надёжный подрядчик</p><h2 className="section-title">Берём объект под контроль</h2><p className="mt-6 text-lg leading-8 text-muted-foreground">Работаем с подрядчиками, девелоперами, промышленными предприятиями и частными заказчиками. Если задача требует несколько видов техники, организуем комплексную подачу и единый документооборот.</p><ul className="mt-8 grid gap-4 text-base font-bold"><li className="flex gap-3"><ShieldCheck className="h-6 w-6 text-orange-600" />Техника проходит осмотр перед каждой сменой</li><li className="flex gap-3"><Route className="h-6 w-6 text-orange-600" />Логистику согласуем до подтверждения заявки</li><li className="flex gap-3"><Check className="h-6 w-6 text-orange-600" />Цена фиксируется в договоре</li></ul><Button asChild className="mt-9 h-13 rounded-none bg-ink px-7 text-base font-black text-white hover:bg-brand hover:text-ink"><Link href="/about">Подробнее о компании <ArrowRight /></Link></Button></div>
+          <div><p className="eyebrow">Надёжный подрядчик</p><h2 className="section-title">Берём объект под контроль</h2><p className="mt-6 text-lg leading-8 text-muted-foreground">Работаем с подрядчиками, девелоперами, промышленными предприятиями и частными заказчиками. Если задача требует несколько видов техники, организуем комплексную подачу и единый документооборот.</p><ul className="mt-8 grid gap-4 text-base font-bold"><li className="flex gap-3"><ShieldCheck className="h-6 w-6 text-brand-blue" />Техника проходит осмотр перед каждой сменой</li><li className="flex gap-3"><Route className="h-6 w-6 text-brand-blue" />Логистику согласуем до подтверждения заявки</li><li className="flex gap-3"><Check className="h-6 w-6 text-brand-blue" />Цена фиксируется в договоре</li></ul><Button asChild className="mt-9 h-13 rounded-none bg-ink px-7 text-base font-black text-white hover:bg-brand hover:text-ink"><Link href="/about">Подробнее о компании <ArrowRight /></Link></Button></div>
         </div>
       </section>
 
