@@ -7,7 +7,6 @@ import {
   Check,
   ChevronRight,
   Clock3,
-  Construction,
   Mail,
   MapPin,
   Menu,
@@ -43,14 +42,12 @@ const navigation = [
 
 export function Logo({ inverted = false }: { inverted?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-3" aria-label="СтройТехника — главная">
-      <span className={`grid h-11 w-11 place-items-center bg-brand text-ink ${inverted ? "shadow-[5px_5px_0_#fff]" : "shadow-[5px_5px_0_#171717]"}`}>
-        <Construction className="h-6 w-6" strokeWidth={2.4} />
-      </span>
-      <span className="leading-none">
-        <b className="block text-lg font-black tracking-[-0.04em]">СТРОЙТЕХНИКА</b>
-        <span className={`mt-1 block text-[11px] font-bold uppercase tracking-[0.14em] ${inverted ? "text-white/55" : "text-muted-foreground"}`}>аренда с экипажем</span>
-      </span>
+    <Link href="/" className="flex shrink-0 items-center" aria-label="DriveEX — главная">
+      <img
+        src="/driveex-logo-cropped.png"
+        alt="DriveEX"
+        className={`h-auto w-[158px] object-contain sm:w-[196px] ${inverted ? "drop-shadow-[0_3px_10px_rgba(0,0,0,.28)]" : ""}`}
+      />
     </Link>
   );
 }
@@ -196,7 +193,7 @@ export function SiteFooter() {
         <div><h3 className="font-black text-brand">Техника</h3><div className="mt-4 grid gap-3 text-sm text-white/70"><Link href="/catalog">Экскаваторы</Link><Link href="/catalog">Погрузчики</Link><Link href="/catalog">Автокраны</Link><Link href="/catalog">Самосвалы</Link></div></div>
         <div><h3 className="font-black text-brand">Контакты</h3><div className="mt-4 grid gap-4 text-sm text-white/70"><a className="flex gap-3" href="tel:+74951234567"><Phone className="h-5 w-5 text-brand" />+7 (495) 123-45-67</a><a className="flex gap-3" href="mailto:info@stroytehnika.ru"><Mail className="h-5 w-5 text-brand" />info@stroytehnika.ru</a><span className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-brand" />Москва, ул. Строителей, 12</span></div></div>
       </div>
-      <div className="border-t border-white/10"><div className="shell flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between"><span>© 2026 «СтройТехника»</span><span>Информация не является публичной офертой</span></div></div>
+      <div className="border-t border-white/10"><div className="shell flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between"><span>© 2026 DriveEX</span><span>Информация не является публичной офертой</span></div></div>
     </footer>
   );
 }
