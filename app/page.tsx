@@ -39,7 +39,7 @@ export default function Home() {
 
       <section className="relative min-h-[650px] bg-ink text-white">
         <div className="absolute inset-0">
-          <img src={assetPath("/hero-excavator.jpg")} alt="Экскаватор на строительном объекте" className="h-full w-full object-cover object-center" />
+          <img src={assetPath("/hero-construction.jpg")} alt="Строительство высотного комплекса с башенными кранами" className="h-full w-full object-cover object-center" />
           <video
             className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
             autoPlay
@@ -47,7 +47,7 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            poster={assetPath("/hero-excavator.jpg")}
+            poster={assetPath("/hero-construction.jpg")}
             aria-hidden="true"
           >
             <source src={assetPath("/hero-equipment.mp4")} type="video/mp4" />

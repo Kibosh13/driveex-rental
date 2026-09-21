@@ -31,4 +31,4 @@ npm run build:pages
 
 ## Медиа
 
-Видео в первом экране: [Suraphat Nuea-on / Pexels](https://www.pexels.com/video/excavator-working-on-construction-site-11839348/), используется по [лицензии Pexels](https://www.pexels.com/license/).
+Видео в первом экране: [TimePRO TV / Pexels](https://www.pexels.com/video/urban-high-rise-construction-with-tower-cranes-32093034/), используется по [лицензии Pexels](https://www.pexels.com/license/).
