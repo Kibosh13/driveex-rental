@@ -238,17 +238,17 @@ function HeaderEquipmentSearch() {
       onMouseLeave={() => setIsCatalogOpen(false)}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setIsCatalogOpen(false); }}
     >
-      <div className="shell flex min-h-16 items-center gap-2 py-2.5 sm:gap-5">
-        <Button asChild className="h-11 shrink-0 gap-1.5 rounded-2xl bg-brand px-3 text-[13px] font-black text-ink shadow-[0_7px_18px_rgba(243,107,33,.28)] hover:bg-brand-dark sm:gap-2 sm:px-7 sm:text-sm">
+      <div className="shell grid min-h-[72px] grid-cols-[max-content_minmax(0,1fr)] items-center gap-2 py-3 sm:gap-3 lg:grid-cols-[max-content_minmax(420px,1050px)]">
+        <Button asChild className="h-12 shrink-0 gap-1.5 rounded-xl bg-brand px-3 text-[13px] font-black text-ink shadow-[0_5px_14px_rgba(243,107,33,.22)] hover:bg-brand-dark sm:gap-2 sm:px-6 sm:text-sm">
           <Link href="/catalog" onMouseEnter={() => setIsCatalogOpen(true)} onFocus={() => setIsCatalogOpen(true)} aria-haspopup="menu" aria-expanded={isCatalogOpen}><LayoutGrid className="h-5 w-5" /> Каталог</Link>
         </Button>
         <form
-          className="relative flex min-w-0 flex-1"
+          className="relative flex h-12 min-w-0 items-center rounded-2xl border-2 border-ink/15 bg-white p-1 shadow-[0_6px_20px_rgba(7,31,56,.08)] transition focus-within:border-brand focus-within:ring-4 focus-within:ring-brand/15"
           role="search"
           onSubmit={submitSearch}
           onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setIsOpen(false); }}
         >
-          <label className="flex h-11 min-w-0 flex-1 items-center gap-2 rounded-l-xl border-2 border-ink bg-white px-3 focus-within:border-brand-blue sm:gap-3 sm:px-4">
+          <label className="flex h-full min-w-0 flex-1 items-center gap-2 px-2 sm:gap-3 sm:px-3">
             <Search className="h-5 w-5 shrink-0 text-brand-blue" />
             <span className="sr-only">Найти технику в аренду</span>
             <input
@@ -256,16 +256,16 @@ function HeaderEquipmentSearch() {
               onChange={(event) => { setQuery(event.target.value); setIsOpen(true); }}
               onFocus={() => { if (normalizedQuery) setIsOpen(true); }}
               onKeyDown={(event) => { if (event.key === "Escape") setIsOpen(false); }}
-              className="min-w-0 flex-1 bg-transparent text-sm font-semibold outline-none placeholder:font-normal placeholder:text-muted-foreground"
-              placeholder="Экскаватор, кран, погрузчик…"
+              className="h-full min-w-0 flex-1 bg-transparent text-sm font-semibold outline-none placeholder:font-normal placeholder:text-muted-foreground"
+              placeholder="Техника или модель"
               aria-label="Найти технику в аренду"
               aria-autocomplete="list"
               aria-expanded={isOpen && Boolean(normalizedQuery)}
             />
           </label>
-          <Button type="submit" className="h-11 rounded-r-xl bg-ink px-3 font-black text-white hover:bg-brand hover:text-ink sm:px-7"><span className="hidden sm:inline">Найти</span><ArrowRight className="h-4 w-4 sm:hidden" /></Button>
+          <Button type="submit" className="h-10 shrink-0 rounded-xl bg-ink px-3 font-black text-white hover:bg-brand hover:text-ink sm:px-6"><span className="hidden sm:inline">Найти</span><ArrowRight className="h-4 w-4 sm:hidden" /></Button>
           {isOpen && normalizedQuery ? (
-            <div className="absolute inset-x-0 top-[calc(100%+6px)] z-50 overflow-hidden rounded-xl border border-silver-dark/70 bg-white shadow-[0_18px_45px_rgba(7,31,56,.2)]">
+            <div className="absolute inset-x-0 top-[calc(100%+10px)] z-50 overflow-hidden rounded-2xl border border-silver-dark/70 bg-white shadow-[0_18px_45px_rgba(7,31,56,.2)]">
               {matches.length ? matches.map((item) => (
                 <Link key={item.slug} href={`/catalog/${item.slug}`} onClick={() => setIsOpen(false)} className="grid gap-1 border-b border-silver-dark/50 px-4 py-3 transition last:border-b-0 hover:bg-silver sm:grid-cols-[1fr_auto] sm:items-center">
                   <span className="font-bold text-ink">{item.name}</span>
