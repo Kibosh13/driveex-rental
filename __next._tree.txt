@@ -1,2 +1,2 @@
-:HL["/driveex-rental/_next/static/chunks/424gshqr0x9eu.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"jD9fuQvHULxoAy6svwHHk"}
+:HL["/driveex-rental/_next/static/chunks/1pj4fcasgk1wa.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"BzIuNCbsZY2IzpOD0gX3F"}
