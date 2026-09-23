@@ -150,8 +150,8 @@ const footerNavigation = [
   ["Контакты", "/contacts"],
 ];
 
-const desktopTriggerClass = "h-10 rounded-xl bg-transparent px-2 text-[13px] font-extrabold text-ink hover:bg-silver hover:text-brand-blue focus:bg-silver data-[state=open]:bg-silver data-[state=open]:text-brand-blue xl:px-3 xl:text-sm";
-const desktopLinkClass = "nav-link px-2 py-3 text-[13px] font-extrabold text-ink hover:text-brand-blue xl:px-3 xl:text-sm";
+const desktopTriggerClass = "h-10 rounded-xl bg-transparent px-2 text-[13px] font-black tracking-[-0.01em] text-ink hover:bg-silver hover:text-brand-blue focus:bg-silver data-[state=open]:bg-silver data-[state=open]:text-brand-blue xl:px-3 xl:text-sm";
+const desktopLinkClass = "nav-link px-2 py-3 text-[13px] font-black tracking-[-0.01em] text-ink hover:text-brand-blue xl:px-3 xl:text-sm";
 const submenuLinkClass = "block border-b border-silver-dark/40 py-2.5 text-sm font-semibold text-ink transition hover:border-brand hover:pl-1 hover:text-brand-blue";
 
 export function Logo({ inverted = false }: { inverted?: boolean }) {
@@ -351,7 +351,7 @@ export function SiteHeader() {
       <header className="relative z-40 border-b border-silver-dark/60 bg-white">
         <div className="shell flex h-[86px] items-center gap-4 xl:gap-7">
           <Logo />
-          <NavigationMenu viewport={false} className="ml-auto hidden h-full flex-none lg:flex" aria-label="Основная навигация">
+          <NavigationMenu viewport={false} className="header-menu-text ml-auto hidden h-full flex-none lg:flex" aria-label="Основная навигация">
             <NavigationMenuList className="h-full gap-0 xl:gap-1">
               <NavigationMenuItem className="flex h-full items-center">
                 <NavigationMenuTrigger className={desktopTriggerClass}>Аренда спецтехники</NavigationMenuTrigger>
@@ -409,7 +409,7 @@ export function SiteHeader() {
                 <SheetTitle><Logo /></SheetTitle>
                 <SheetDescription>Аренда спецтехники по Москве и области</SheetDescription>
               </SheetHeader>
-              <nav className="px-6 py-3 text-lg font-black">
+              <nav className="header-menu-text px-6 py-3 text-lg font-black">
                 <Accordion type="multiple" className="w-full">
                   <AccordionItem value="rental" className="border-silver-dark/60">
                     <AccordionTrigger className="py-4 text-lg font-black hover:no-underline">Аренда спецтехники</AccordionTrigger>
