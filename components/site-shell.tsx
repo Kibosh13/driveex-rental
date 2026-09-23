@@ -200,7 +200,7 @@ export function RequestDialog({ children, equipmentName }: { children: React.Rea
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-md rounded-2xl border-2 border-brand-blue bg-white p-7 shadow-[10px_10px_0_#f36b21]">
+      <DialogContent className="max-w-md rounded-2xl border-2 border-brand-blue bg-white p-7 shadow-[10px_10px_0_#55c2f2]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-black tracking-[-0.04em]">Рассчитать аренду</DialogTitle>
           <DialogDescription className="text-base leading-6">Оставьте контакты и задачу. Менеджер уточнит детали и предложит технику.</DialogDescription>
@@ -234,12 +234,12 @@ function HeaderEquipmentSearch() {
 
   return (
     <div
-      className="relative border-t border-silver-dark/50 bg-silver/80"
+      className="relative rounded-b-[28px] border-t border-[#bfd2e5] bg-[#dceafa]/80"
       onMouseLeave={() => setIsCatalogOpen(false)}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setIsCatalogOpen(false); }}
     >
-      <div className="shell grid min-h-[72px] grid-cols-[max-content_minmax(0,1fr)] items-center gap-2 py-3 sm:gap-3 lg:grid-cols-[max-content_minmax(420px,1050px)]">
-        <Button asChild className="h-12 shrink-0 gap-1.5 rounded-xl bg-brand px-3 text-[13px] font-black text-ink shadow-[0_5px_14px_rgba(243,107,33,.22)] hover:bg-brand-dark sm:gap-2 sm:px-6 sm:text-sm">
+      <div className="grid min-h-[72px] grid-cols-[max-content_minmax(0,1fr)] items-center gap-2 px-5 py-3 sm:gap-3 sm:px-6 lg:grid-cols-[max-content_minmax(420px,1050px)]">
+        <Button asChild className="h-12 shrink-0 gap-1.5 rounded-xl bg-brand px-3 text-[13px] font-black text-ink shadow-[0_5px_14px_rgba(85,194,242,.24)] hover:bg-brand-dark sm:gap-2 sm:px-6 sm:text-sm">
           <Link href="/catalog" onMouseEnter={() => setIsCatalogOpen(true)} onFocus={() => setIsCatalogOpen(true)} aria-haspopup="menu" aria-expanded={isCatalogOpen}><LayoutGrid className="h-5 w-5" /> Каталог</Link>
         </Button>
         <form
@@ -348,8 +348,8 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-      <header className="relative z-40 border-b border-silver-dark/60 bg-white">
-        <div className="shell flex h-[86px] items-center gap-4 xl:gap-7">
+      <header className="shell relative z-40 my-4 rounded-[28px] border border-[#b9cee3] bg-[#eaf3fb] shadow-[0_16px_40px_rgba(8,47,91,.14)]">
+        <div className="flex h-[86px] items-center gap-4 px-5 sm:px-6 xl:gap-7">
           <Logo />
           <NavigationMenu viewport={false} className="header-menu-text ml-auto hidden h-full flex-none lg:flex" aria-label="Основная навигация">
             <NavigationMenuList className="h-full gap-0 xl:gap-1">
