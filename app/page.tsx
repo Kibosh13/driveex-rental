@@ -6,6 +6,7 @@ import {
   Building2,
   Check,
   HardHat,
+  Quote,
   Route,
   Search,
   ShieldCheck,
@@ -61,16 +62,16 @@ export default function Home() {
             <h1 className="max-w-3xl text-[clamp(3rem,6vw,6rem)] font-black uppercase leading-[.88] tracking-[-0.06em]">Техника, которая <span className="text-brand">работает</span></h1>
             <p className="mt-7 max-w-2xl text-lg leading-7 text-white/78 sm:text-xl">Аренда спецтехники с опытным оператором, топливом и доставкой на объект по Москве и области.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <RequestDialog><Button className="h-14 rounded-none bg-brand px-7 text-base font-black text-ink hover:bg-brand-dark">Подобрать технику <ArrowRight /></Button></RequestDialog>
-              <Button asChild variant="outline" className="h-14 rounded-none border-white/30 bg-white/5 px-7 text-base font-bold text-white backdrop-blur hover:bg-white hover:text-ink"><Link href="/catalog"><Search /> Открыть каталог</Link></Button>
+              <RequestDialog><Button className="h-14 rounded-xl bg-brand px-7 text-base font-black text-ink hover:bg-brand-dark">Подобрать технику <ArrowRight /></Button></RequestDialog>
+              <Button asChild variant="outline" className="h-14 rounded-xl border-white/30 bg-white/5 px-7 text-base font-bold text-white backdrop-blur hover:bg-white hover:text-ink"><Link href="/catalog"><Search /> Открыть каталог</Link></Button>
             </div>
-            <div className="mt-12 grid max-w-2xl grid-cols-1 gap-px bg-white/15 sm:grid-cols-3">
+            <div className="mt-12 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl bg-white/15 sm:grid-cols-3">
               {[["200+", "единиц техники"], ["10 лет", "работаем на объектах"], ["4,9", "рейтинг клиентов"]].map(([value, label]) => (
                 <div key={label} className="bg-[#082f5b]/55 px-5 py-4 backdrop-blur-sm"><b className="text-2xl font-black text-brand">{value}</b><span className="mt-1 block text-sm text-white/70">{label}</span></div>
               ))}
             </div>
           </div>
-          <aside className="hidden border-l-4 border-brand bg-white p-7 text-ink shadow-[14px_14px_0_rgba(11,79,147,.92)] lg:block">
+          <aside className="hidden rounded-2xl border-l-4 border-brand bg-white p-7 text-ink shadow-[14px_14px_0_rgba(11,79,147,.92)] lg:block">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-muted-foreground">Быстрый расчёт</p>
             <h2 className="mt-2 text-3xl font-black leading-tight tracking-[-0.04em]">Что нужно сделать на объекте?</h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">Опишите задачу — подберём машину и подготовим предварительную стоимость.</p>
@@ -83,12 +84,12 @@ export default function Home() {
         <div className="shell">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div><p className="eyebrow">Каталог</p><h2 className="section-title">Техника под вашу задачу</h2></div>
-            <Button asChild variant="outline" className="h-12 rounded-none border-2 px-6 font-black"><Link href="/catalog">Весь каталог <ArrowRight /></Link></Button>
+            <Button asChild variant="outline" className="h-12 rounded-xl border-2 px-6 font-black"><Link href="/catalog">Весь каталог <ArrowRight /></Link></Button>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {categories.map((category) => (
-              <Link href="/catalog" key={category.name} className="group border border-silver-dark/60 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#0b4f93]">
-                <div className="relative h-48 overflow-hidden bg-zinc-100"><img src={assetPath(category.image)} alt={category.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-3 top-3 bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span></div>
+              <Link href="/catalog" key={category.name} className="group overflow-hidden rounded-2xl border border-silver-dark/60 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0_#0b4f93]">
+                <div className="relative h-48 overflow-hidden bg-zinc-100"><img src={assetPath(category.image)} alt={category.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-3 top-3 rounded-full bg-brand px-3 py-1 text-xs font-black uppercase text-ink">В наличии</span></div>
                 <div className="p-5"><h3 className="min-h-14 text-xl font-black leading-tight tracking-[-0.03em]">{category.name}</h3><p className="mt-2 text-sm text-muted-foreground">{category.meta}</p><p className="mt-5 text-lg font-black text-brand">{category.price}</p><span className="mt-5 flex items-center justify-between border-t border-silver-dark/50 pt-4 text-sm font-black">Смотреть технику <ArrowRight className="h-4 w-4" /></span></div>
               </Link>
             ))}
@@ -115,7 +116,7 @@ export default function Home() {
       <section className="bg-ink py-20 text-white">
         <div className="shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <div><p className="text-sm font-black uppercase tracking-[.14em] text-brand">Как мы работаем</p><h2 className="mt-4 text-[clamp(2.5rem,5vw,4.6rem)] font-black uppercase leading-[.92] tracking-[-.06em]">От заявки до закрывающих документов</h2><p className="mt-6 text-lg leading-7 text-white/60">Один менеджер ведёт заказ, контролирует подачу и остаётся на связи во время работ.</p></div>
-          <div className="grid gap-px bg-white/15 sm:grid-cols-2">
+          <div className="grid gap-px overflow-hidden rounded-2xl bg-white/15 sm:grid-cols-2">
             {[["01", "Уточняем задачу", "Адрес, объём работ, сроки и условия въезда."], ["02", "Подбираем машину", "Проверяем доступность и рассчитываем стоимость."], ["03", "Подаём на объект", "Техника приезжает заправленной и с оператором."], ["04", "Закрываем заказ", "Предоставляем акт и полный комплект документов."]].map(([num, title, text]) => <div key={num} className="bg-ink p-7"><span className="text-3xl font-black text-brand">{num}</span><h3 className="mt-5 text-xl font-black">{title}</h3><p className="mt-2 text-sm leading-6 text-white/55">{text}</p></div>)}
           </div>
         </div>
@@ -123,22 +124,37 @@ export default function Home() {
 
       <section className="bg-silver py-20">
         <div className="shell grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[500px] overflow-hidden"><img src={assetPath("/excavator-work.jpg")} alt="Работа спецтехники на городском объекте" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute bottom-0 left-0 max-w-sm bg-brand p-6 text-ink"><b className="text-4xl font-black">2 400+</b><p className="mt-1 font-bold">заказов выполнено за прошлый год</p></div></div>
-          <div><p className="eyebrow">Надёжный подрядчик</p><h2 className="section-title">Берём объект под контроль</h2><p className="mt-6 text-lg leading-8 text-muted-foreground">Работаем с подрядчиками, девелоперами, промышленными предприятиями и частными заказчиками. Если задача требует несколько видов техники, организуем комплексную подачу и единый документооборот.</p><ul className="mt-8 grid gap-4 text-base font-bold"><li className="flex gap-3"><ShieldCheck className="h-6 w-6 text-brand-blue" />Техника проходит осмотр перед каждой сменой</li><li className="flex gap-3"><Route className="h-6 w-6 text-brand-blue" />Логистику согласуем до подтверждения заявки</li><li className="flex gap-3"><Check className="h-6 w-6 text-brand-blue" />Цена фиксируется в договоре</li></ul><Button asChild className="mt-9 h-13 rounded-none bg-ink px-7 text-base font-black text-white hover:bg-brand hover:text-ink"><Link href="/about">Подробнее о компании <ArrowRight /></Link></Button></div>
+          <div className="relative min-h-[500px] overflow-hidden rounded-2xl"><img src={assetPath("/excavator-work.jpg")} alt="Работа спецтехники на городском объекте" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute bottom-0 left-0 max-w-sm rounded-tr-2xl bg-brand p-6 text-ink"><b className="text-4xl font-black">2 400+</b><p className="mt-1 font-bold">заказов выполнено за прошлый год</p></div></div>
+          <div><p className="eyebrow">Надёжный подрядчик</p><h2 className="section-title">Берём объект под контроль</h2><p className="mt-6 text-lg leading-8 text-muted-foreground">Работаем с подрядчиками, девелоперами, промышленными предприятиями и частными заказчиками. Если задача требует несколько видов техники, организуем комплексную подачу и единый документооборот.</p><ul className="mt-8 grid gap-4 text-base font-bold"><li className="flex gap-3"><ShieldCheck className="h-6 w-6 text-brand-blue" />Техника проходит осмотр перед каждой сменой</li><li className="flex gap-3"><Route className="h-6 w-6 text-brand-blue" />Логистику согласуем до подтверждения заявки</li><li className="flex gap-3"><Check className="h-6 w-6 text-brand-blue" />Цена фиксируется в договоре</li></ul><Button asChild className="mt-9 h-13 rounded-xl bg-ink px-7 text-base font-black text-white hover:bg-brand hover:text-ink"><Link href="/about">Подробнее о компании <ArrowRight /></Link></Button></div>
         </div>
       </section>
 
       <section className="bg-white py-20">
         <div className="shell grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
-          <div><p className="eyebrow">Вопросы</p><h2 className="section-title">Что важно знать до заказа</h2><p className="mt-5 text-muted-foreground">Не нашли ответ? Опишите задачу — менеджер перезвонит и всё рассчитает.</p><RequestDialog><Button className="mt-7 h-12 rounded-none bg-brand px-6 font-black text-ink hover:bg-brand-dark">Задать вопрос <ArrowRight /></Button></RequestDialog></div>
+          <div><p className="eyebrow">Вопросы</p><h2 className="section-title">Что важно знать до заказа</h2><p className="mt-5 text-muted-foreground">Не нашли ответ? Опишите задачу — менеджер перезвонит и всё рассчитает.</p><RequestDialog><Button className="mt-7 h-12 rounded-xl bg-brand px-6 font-black text-ink hover:bg-brand-dark">Задать вопрос <ArrowRight /></Button></RequestDialog></div>
           <Accordion className="border-t-2 border-ink" type="single" collapsible>
             {faqs.map(([question, answer], index) => <AccordionItem key={question} value={`item-${index}`}><AccordionTrigger className="py-6 text-base font-black hover:no-underline">{question}</AccordionTrigger><AccordionContent className="max-w-2xl pb-6 text-base leading-7 text-muted-foreground">{answer}</AccordionContent></AccordionItem>)}
           </Accordion>
         </div>
       </section>
 
+      <section id="director-message" className="scroll-mt-36 bg-silver py-20">
+        <div className="shell grid overflow-hidden rounded-3xl bg-ink text-white lg:grid-cols-[.78fr_1.22fr]">
+          <div className="relative min-h-[440px] overflow-hidden lg:min-h-[560px]">
+            <img src={assetPath("/general-director.jpg")} alt="Генеральный директор DriveEX" className="absolute inset-0 h-full w-full object-cover object-top" />
+          </div>
+          <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16">
+            <p className="text-sm font-black uppercase tracking-[.14em] text-brand">Обращение генерального директора</p>
+            <Quote className="mt-8 h-12 w-12 text-brand-blue" />
+            <blockquote className="mt-5 max-w-2xl text-xl font-semibold leading-9 text-white/85 md:text-2xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Мы строим работу так, чтобы техника выходила на объект вовремя, а заказчик был уверен в результате.</blockquote>
+            <div className="mt-8 border-l-4 border-brand pl-5"><p className="text-xl font-black">Имя Фамилия</p><p className="mt-1 text-sm text-white/55">Генеральный директор DriveEX</p></div>
+            <Button asChild className="mt-9 w-fit rounded-xl bg-brand px-7 font-black text-ink hover:bg-brand-dark"><Link href="/about#team">Подробнее о компании <ArrowRight /></Link></Button>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-brand py-14">
-        <div className="shell flex flex-col justify-between gap-6 lg:flex-row lg:items-center"><div><p className="text-sm font-black uppercase tracking-[.14em]">Нужна техника?</p><h2 className="mt-2 text-3xl font-black tracking-[-.04em] md:text-5xl">Рассчитаем заказ за 15 минут</h2></div><RequestDialog><Button className="h-14 rounded-none bg-ink px-8 text-base font-black text-white hover:bg-white hover:text-ink">Получить расчёт <ArrowRight /></Button></RequestDialog></div>
+        <div className="shell flex flex-col justify-between gap-6 lg:flex-row lg:items-center"><div><p className="text-sm font-black uppercase tracking-[.14em]">Нужна техника?</p><h2 className="mt-2 text-3xl font-black tracking-[-.04em] md:text-5xl">Рассчитаем заказ за 15 минут</h2></div><RequestDialog><Button className="h-14 rounded-xl bg-ink px-8 text-base font-black text-white hover:bg-white hover:text-ink">Получить расчёт <ArrowRight /></Button></RequestDialog></div>
       </section>
       <SiteFooter />
     </main>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { PageHero, ProductCard, SiteFooter, SiteHeader } from "@/components/site-shell";
 import { categoryFilters, equipment } from "@/lib/site-data";
@@ -8,6 +8,13 @@ import { categoryFilters, equipment } from "@/lib/site-data";
 export default function CatalogPage() {
   const [category, setCategory] = useState("all");
   const [query, setQuery] = useState("");
+  useEffect(() => {
+    const parameters = new URLSearchParams(window.location.search);
+    const requestedCategory = parameters.get("category");
+    const requestedQuery = parameters.get("q");
+    if (requestedCategory && categoryFilters.some(([value]) => value === requestedCategory)) setCategory(requestedCategory);
+    if (requestedQuery) setQuery(requestedQuery);
+  }, []);
   const filtered = useMemo(() => equipment.filter((item) => {
     const categoryMatch = category === "all" || item.category === category;
     const searchMatch = item.name.toLowerCase().includes(query.toLowerCase());
@@ -21,7 +28,7 @@ export default function CatalogPage() {
       <section className="bg-white py-16">
         <div className="shell">
           <div className="grid gap-4 border-b border-silver-dark/60 pb-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <label className="flex h-13 items-center gap-3 border-2 border-ink bg-white px-4 lg:max-w-xl">
+            <label className="flex h-13 items-center gap-3 rounded-xl border-2 border-ink bg-white px-4 lg:max-w-xl">
               <Search className="h-5 w-5 text-muted-foreground" />
               <input value={query} onChange={(event) => setQuery(event.target.value)} className="min-w-0 flex-1 outline-none" placeholder="Найти технику по названию" aria-label="Поиск по каталогу" />
             </label>
