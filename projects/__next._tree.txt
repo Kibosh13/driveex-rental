@@ -1,5 +1,5 @@
-:HL["/driveex-rental/_next/static/chunks/1pj4fcasgk1wa.css","style"]
+:HL["/driveex-rental/_next/static/chunks/30zfyuy-0_jpu.css","style"]
 :HL["/driveex-rental/hero-excavator.jpg","image"]
 :HL["/driveex-rental/crane-truck.jpg","image"]
 :HL["/driveex-rental/excavator-work.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"projects","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"BzIuNCbsZY2IzpOD0gX3F"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"projects","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"afD-Vv_QSejE550lLHEED"}
